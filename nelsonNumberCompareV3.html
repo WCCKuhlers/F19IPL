@@ -85,7 +85,27 @@
 					
 					guessSubmit.addEventListener('click', checkGuess);
 					
-	
+					function setGameOver() {
+						guessField.disabled = true; 
+						guess.Submit.disabled = true;
+						resetButton = document.createElement('button');
+						resetButton.textContent = 'Start new game' ;
+						document.body.appendChild(resetButtom);
+						resetButton.addEventListener('click', resetGame);
+					}
+					
+					function resetGame() {
+						guessCount = 1;
+						const resetParas = document.querySelectorAll('resetParas p')
+						for(let i = 0 ; i < resetParas.length ; i++) {
+							resetParas[i].textContent = ' ';
+						}
+						
+					resetButtom.parentNode.removeChild(resetButtom);
+					guessField.disabled = false;
+					guessSubmit.disabled = false;
+					
+						
 	
 	
 	
