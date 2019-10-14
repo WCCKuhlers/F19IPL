@@ -33,21 +33,21 @@
 			<div class="resultParas">
 			<p class="guesses"></p>
 			<p class="lastResult"></p>
-			<p class="loworHI"></p>
+			<p class="lowOrHI"></p>
 			</div>
 			
 			<script>
-			     let randomNumber = math.floor(Math.random() * 100) + 1; 
-				 const guesses = document.querySelector('guesses') ;
-				 const lastResult = document.querySelector('lastResult');
-				 const loworHi = document.querySelector('loworHi');
-				 const guessSubmit = document.querySelector('guessSubmit');
-				 const guessField = documetn.querySelector('guessField');
+			     let randomNumber = Math.floor(Math.random() * 100) + 1; 
+				 const guesses = document.querySelector('.guesses') ;
+				 const lastResult = document.querySelector('.lastResult');
+				 const lowOrHi = document.querySelector('.loworHi');
+				 const guessSubmit = document.querySelector('.guessSubmit');
+				 const guessField = document.querySelector('.guessField');
 				 let guesscount = 1; 
 				 let resetButton;
 				 
 				function checkGuess() { 
-				    let userGuess = Number(guessField.Value);
+				    let userGuess = Number(guessFieldValue);
 					if (guessCount === 1) { 
 					    guesses.textContent = 'Previous guesses: ';
 						
@@ -58,19 +58,19 @@
 						if(userGuess === randomNumber) { 
 						lastResult.textContent = 'Congratulations! Work so hard forgot how to vacation!'; 
 						lastResult.style.backgroundColor = 'green';
-						loworHi.textContent = ' ' ;
+						lowOrHi.textContent = ' ' ;
 						setGameOver() ;
 						} else if (guessCount === 10); 
 						    lastResult.textContent = 'Game Over you had 10 guesses!';
-							loworHI.textContent = ' ';
+							lowOrHI.textContent = ' ';
 							setGameOver(); 
 						} else { 
 						    lastResult.textContent = 'Wrong';
 							lastResult.style.backgroundColor = 'red'; 
 							if(userGuess < randomNumber) { 
-							loworHi.textContent = 'Last Guess too low';
+							lowOrHi.textContent = 'Last Guess too low';
 							} else if(userGuess > randomNumber) { 
-							   loworHi.textContent = 'Last guess too high';
+							   lowOrHi.textContent = 'Last guess too high';
 						    } 
 						}
 						guessCount++;
@@ -80,20 +80,20 @@
 						
 						guessSubmit.addEventListener('click', checkGuess); 
 						
-						function setGmaeOver() { 
+						function setGameOver() { 
 						    guessField.disabled = true;
 							guessSubmit.disabled = true;
-							resetButton = document.createElement('button') 
+							resetButton = document.createElement('button'); 
 							resetButtton.textContent = 'Start new game'; 
-							document.body.appendChild(resetButton) 
+							document.body.appendChild(resetButton); 
 						    resetButton.addEventListener('click'); 
 							} 
 							
 							function resetGame() { 
 							   guessCount = 1; 
 							   const resetParas = document.querySelectorAll('resetParas p');
-							   for(let i = 0 ; i < resetParas.length ; i++) 
-							     resetParas][i].textContent = ' ' ;
+							   for(let i = 0 ; i < resetParas.length ; i++); 
+							     resetParas[i].textContent = ' ' ;
 								 } 
 								 
 							resetButton.parentNode.removeChild(resetButton); 
@@ -102,7 +102,7 @@
 							guessField.value = ' ' ;
 							guessField.focus(); 
 							lastResult.style.backgroundColor = 'white';
-							randomNumber = Math.florr(Math.random() * 100) + 1; 
+							randomNumber = Math.floor(Math.random() * 100) + 1; 
 				} 
 </script>							
 						    
