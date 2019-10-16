@@ -29,7 +29,7 @@
 			guess the number in 10 turns or fewer. We'll tell you if your guess was 
 			too high or too low. </p>
 			
-			<div class="form">
+			<div class="form" >
 				<label for="guessField">Enter Guess: </label> <input type="text"
 				id="guessField" class="guessField">
 				<input type="submit" value="Submit guess" class="guessSubmit">
@@ -87,7 +87,7 @@
 					
 					function setGameOver() {
 						guessField.disabled = true; 
-						guess.Submit.disabled = true;
+						guessSubmit.disabled = true;
 						resetButton = document.createElement('button');
 						resetButton.textContent = 'Start new game' ;
 						document.body.appendChild(resetButton);
@@ -101,7 +101,7 @@
 							resetParas[i].textContent = ' ';
 						}
 						
-					resetButton.parentNode.removeChild(resetButtom);
+					resetButton.parentNode.removeChild(resetButton);
 					guessField.disabled = false;
 					guessSubmit.disabled = false;
 					guessField.value = ' ';
