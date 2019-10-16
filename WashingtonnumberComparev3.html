@@ -30,6 +30,7 @@
 		        <label for="guessField">Enter Guess: </label> <input type="text"
 				id="guessField" class="guessField">
 				<input type="submit" value="Submit guess" class="guessSubmit">
+			</div>
 			<div class="resultParas">
 			<p class="guesses"></p>
 			<p class="lastResult"></p>
@@ -40,14 +41,14 @@
 			     let randomNumber = Math.floor(Math.random() * 100) + 1; 
 				 const guesses = document.querySelector('.guesses') ;
 				 const lastResult = document.querySelector('.lastResult');
-				 const lowOrHi = document.querySelector('.loworHi');
+				 const lowOrHi = document.querySelector('.lowOrHi');
 				 const guessSubmit = document.querySelector('.guessSubmit');
 				 const guessField = document.querySelector('.guessField');
 				 let guesscount = 1; 
 				 let resetButton;
 				 
 				function checkGuess() { 
-				    let userGuess = Number(guessFieldValue);
+				    let userGuess = Number(guessField.value);
 					if (guessCount === 1) { 
 					    guesses.textContent = 'Previous guesses: ';
 						
@@ -62,7 +63,7 @@
 						setGameOver() ;
 						} else if (guessCount === 10); 
 						    lastResult.textContent = 'Game Over you had 10 guesses!';
-							lowOrHI.textContent = ' ';
+							lowOrHi.textContent = ' ';
 							setGameOver(); 
 						} else { 
 						    lastResult.textContent = 'Wrong';
@@ -86,12 +87,12 @@
 							resetButton = document.createElement('button'); 
 							resetButtton.textContent = 'Start new game'; 
 							document.body.appendChild(resetButton); 
-						    resetButton.addEventListener('click'); 
+						    resetButton.addEventListener(click, resetGame'); 
 							} 
 							
 							function resetGame() { 
 							   guessCount = 1; 
-							   const resetParas = document.querySelectorAll('resetParas p');
+							   const resetParas = document.querySelectorAll(',resultParas');
 							   for(let i = 0 ; i < resetParas.length ; i++); 
 							     resetParas[i].textContent = ' ' ;
 								 } 
