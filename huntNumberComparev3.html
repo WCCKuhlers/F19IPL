@@ -10,7 +10,7 @@
 		
 			body { 
 				width: 50%;
-				max-width: 800px
+				max-width: 800px;
 				min-width: 480px;
 				margin: 0 auto;
 			}
@@ -42,16 +42,17 @@
 		</div>
 		
 		<script>
-			let randomNumber = math.floor(Math.random() * 100) + 1;
+			let randomNumber = Math.floor(Math.random() * 100) + 1;
 			const guesses = document.querySelector('.guesses');
-			const lastResult = documnet.querySelector('.lestResults');
+			const lastResult = documnet.querySelector('.lastResults');
 			const lowOrHi = document.querySelector('.lowOrHi');
 			const guessSubmit = document.querySelector('.guessSubmit');
+			const guessField = document.querySelector('.guessFeild');
 			let guessCount = 1;	
 			let resetButton;
 			
 			function checkGuess() {
-				let userGuess = Number(guessField.Value);
+				let userGuess = Number(guessField.value);
 				if guessCount === 1) {
 					guess.textContent = 'Previous guesses: ';
 				}
@@ -94,7 +95,7 @@
 						
 						function resetGame() {
 							guessCount = 1;
-							const resetPara = document.querySelectorAll('resetParas p');
+							const resetParas = document.querySelectorAll('.resultParas p');
 							for(let i = 0 ; i < resetParas.length ; i++) {
 								resetParas[i].textContent = ' ';
 							}
@@ -105,7 +106,12 @@
 						guessField.value = ' '; 
 						guessField.focus();
 						lastResult.style.backgroundColor = 'White';
-						randomNumber = Msth.floor(Math.random() * 100) +1; 
+						randomNumber = Math.floor(Math.random() * 100) +1; 
+					
+					}
+					
+					
+				</script>
 									
 			
 			
