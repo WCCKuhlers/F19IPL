@@ -76,7 +76,30 @@
 	}
 	
 	guessSubmit.addEventListener('click', checkGuess);
-
-
+	
+	function setGameOver() {
+	    guessField.disabled= true;
+		guessSubmit.disabled= true;
+		resetButton= document.createElement ('button');
+		resetButton.textContent = 'start new game';
+		document.body.appendChild(ResetButton);
+		resetButton.addEventListener('click', resetGame);
+      }
+	  
+	  function resetGame() {
+	  const resetParas = document.querySelectorAll('resetParas p')
+	  for(let i = 0 ; i < resetParas.length ; i++) {
+	      resetParas[i].textContent= ' ';
+		 }
+		 
+		 resetButton.parentNode.removeChild(resetButton);
+		 guessField.disabled = false;
+		 guessSubmit.diabled = false;
+		 guessField.value = ' ';
+		 guessfield.focus();
+		 lastResult.style.backgroundColor= 'white';
+		 randomNumber = Math.floor(Math.random() * 100) + 1
+		}
+</script>
 </body>
 </html>
